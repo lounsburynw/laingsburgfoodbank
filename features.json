@@ -128,7 +128,7 @@
         "description": "Placeholder for current needs/wants"
       },
       "menu_section": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 3,
         "description": "Placeholder for food availability menu"
       }

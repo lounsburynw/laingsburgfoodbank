@@ -702,6 +702,100 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
+   Menu Section (What's Available)
+   -------------------------------------------------------------------------- */
+
+.menu-section {
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.menu-section-content {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.menu-section h2 {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.menu-section .section-lead {
+  margin-bottom: var(--spacing-xl);
+}
+
+.menu-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.menu-card {
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.menu-card h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-light);
+}
+
+.menu-list li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.menu-note {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+@media (min-width: 48rem) {
+  .menu-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .menu-section h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (min-width: 64rem) {
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Contact Section
    -------------------------------------------------------------------------- */
 
