@@ -157,3 +157,24 @@
 - Next P2 items: who_we_serve, color_contrast
 
 ---
+
+## Session 9 - Who We Serve Section (2025-12-22)
+- Added "Who We Serve" eligibility section with three info cards:
+  - Service Area: Laingsburg School District including City of Laingsburg, Woodhull Township, Victor Township, surrounding areas
+  - No Requirements: Dignity-focused messaging - no proof of income, ID, address, or referral needed
+  - What to Expect: Simple first-visit experience - come during hours, tell household size, select food
+- Design features:
+  - "What to Expect" card uses highlight style (green background) to stand out
+  - Checkmark list items for easy scanning
+  - Section lead: "Everyone is welcome. No questions asked."
+- Added CSS styles:
+  - .eligibility-grid with 3-column responsive layout
+  - .eligibility-card styling consistent with info-card pattern
+  - .eligibility-card--highlight modifier for emphasis card
+  - .area-list with checkmark pseudo-elements
+- Added navigation link for "Eligibility" section
+- Marked as implemented: who_we_serve
+- Next P2 items: color_contrast
+- Next P3 items: donation_section, volunteer_section, needs_section, menu_section
+
+---

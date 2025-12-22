@@ -628,6 +628,81 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
+   Eligibility Section (Who We Serve)
+   -------------------------------------------------------------------------- */
+
+.eligibility-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.eligibility-card {
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.eligibility-card h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.eligibility-card p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.eligibility-card--highlight {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.eligibility-card--highlight h3 {
+  color: var(--color-background);
+}
+
+.eligibility-card--highlight p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.eligibility-card--highlight .area-list li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.area-list {
+  list-style: none;
+  padding: 0;
+}
+
+.area-list li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-light);
+}
+
+.area-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.eligibility-card--highlight .area-list li::before {
+  color: var(--color-secondary);
+}
+
+@media (min-width: 48rem) {
+  .eligibility-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Contact Section
    -------------------------------------------------------------------------- */
 

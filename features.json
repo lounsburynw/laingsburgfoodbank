@@ -64,7 +64,7 @@
         "description": "List of services provided"
       },
       "who_we_serve": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Eligibility info and service area"
       }
