@@ -19,7 +19,7 @@
         "description": "Create index.html with semantic HTML5 structure"
       },
       "css_reset": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Add CSS reset and base variables"
       }
@@ -75,12 +75,12 @@
     "description": "Visual design and responsiveness",
     "design": {
       "color_scheme": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Define color palette (warm, welcoming colors)"
       },
       "typography": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Font choices for headings and body"
       },
@@ -102,7 +102,7 @@
         "description": "WCAG AA contrast ratios"
       },
       "keyboard_nav": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Focusable elements, skip links"
       }

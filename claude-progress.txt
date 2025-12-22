@@ -30,3 +30,21 @@
 - Next P1 items: css_reset, hero_section, hours_location, contact_info, responsive_layout
 
 ---
+
+## Session 2 - CSS Reset and Base Variables (2025-12-21)
+- Created src/css/styles.css with modern CSS reset
+- Added CSS custom properties (variables) for:
+  - Color palette: primary green (#1a5f2a), secondary orange (#f5a623), text, backgrounds
+  - Typography: system font stack, size scale, line heights
+  - Spacing scale (xs through 3xl)
+  - Layout constraints (max-width for content and text)
+  - Border radii and transitions
+  - Focus outline styles for accessibility
+- Implemented box-sizing reset, margin/padding reset
+- Added prefers-reduced-motion media query
+- Added prefers-reduced-motion respecting smooth scroll
+- Created utility classes: .visually-hidden, .skip-link
+- Marked as implemented: css_reset, color_scheme, typography, keyboard_nav
+- Next P1 items: hero_section, hours_location, contact_info, responsive_layout
+
+---
