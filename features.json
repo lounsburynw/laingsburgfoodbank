@@ -30,12 +30,12 @@
     "description": "Core landing page sections",
     "hero": {
       "hero_section": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Welcome banner with food bank name and tagline"
       },
       "cta_buttons": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Primary CTAs: Donate, Volunteer, Get Help"
       }
