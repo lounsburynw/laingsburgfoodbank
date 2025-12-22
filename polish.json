@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "phase": "polish",
+  "last_updated": "2025-12-22",
+
+  "category_order": ["maintainability", "accessibility", "performance", "seo", "testing"],
+
+  "maintainability": {
+    "description": "Enable non-technical content editing",
+    "cms": {
+      "decap_cms_setup": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Install and configure Decap CMS for GitHub Pages"
+      },
+      "admin_interface": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Create /admin page with CMS login"
+      },
+      "content_collections": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Define editable content: hours, menu items, needs list"
+      },
+      "cms_documentation": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Write user guide for content editors"
+      }
+    }
+  },
+
+  "accessibility": {
+    "description": "WCAG 2.1 AA compliance verification",
+    "audit": {
+      "automated_scan": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Run axe/WAVE accessibility audit"
+      },
+      "keyboard_testing": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Manual keyboard navigation test"
+      },
+      "screen_reader_testing": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Test with VoiceOver/NVDA"
+      }
+    }
+  },
+
+  "performance": {
+    "description": "Fast loading on all devices",
+    "optimization": {
+      "image_optimization": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Compress images, add lazy loading"
+      },
+      "lighthouse_audit": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Achieve 90+ Lighthouse score"
+      },
+      "critical_css": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Inline critical CSS for faster render"
+      }
+    }
+  },
+
+  "seo": {
+    "description": "Search engine optimization",
+    "basics": {
+      "meta_tags": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Open Graph, Twitter cards, structured data"
+      },
+      "sitemap": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Generate sitemap.xml"
+      },
+      "robots_txt": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Create robots.txt"
+      }
+    }
+  },
+
+  "testing": {
+    "description": "Cross-browser and device testing",
+    "compatibility": {
+      "browser_testing": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Test Chrome, Firefox, Safari, Edge"
+      },
+      "mobile_testing": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Test on iOS and Android devices"
+      },
+      "print_styles": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Ensure page prints cleanly"
+      }
+    }
+  }
+}

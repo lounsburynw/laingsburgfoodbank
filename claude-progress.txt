@@ -286,3 +286,25 @@
 - Ready to advance to next development phase
 
 ---
+
+## Session 15 - Add CMS to Roadmap (2025-12-22)
+- Discussed maintainability for non-technical users
+- Current setup requires HTML editing + git knowledge (not ideal)
+- Decision: Add Decap CMS (free, works with GitHub Pages)
+- Created polish.json checklist with:
+  - Maintainability: Decap CMS setup, admin interface, content collections, documentation
+  - Accessibility: Automated scan, keyboard testing, screen reader testing
+  - Performance: Image optimization, Lighthouse audit, critical CSS
+  - SEO: Meta tags, sitemap, robots.txt
+  - Testing: Browser testing, mobile testing, print styles
+- Updated phase.json:
+  - Marked foundation phase as complete
+  - Added "CMS for non-technical editing" to polish phase focus
+- CMS will provide /admin page where editors can update:
+  - Operating hours
+  - Menu items (what's available)
+  - Current needs list
+  - Contact information
+- No code changes needed until polish phase
+
+---

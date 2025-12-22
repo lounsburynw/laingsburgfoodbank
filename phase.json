@@ -9,7 +9,7 @@
     "foundation": {
       "description": "Core site structure and landing page",
       "checklist": "features.json",
-      "status": "active",
+      "status": "complete",
       "focus": [
         "Project structure",
         "Landing page with critical info",
@@ -44,6 +44,7 @@
       "checklist": "polish.json",
       "status": "pending",
       "focus": [
+        "CMS for non-technical editing",
         "Accessibility audit",
         "Performance optimization",
         "SEO",
