@@ -52,7 +52,7 @@
         "description": "Phone, email, social media links"
       },
       "about_section": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Brief mission statement and history"
       }

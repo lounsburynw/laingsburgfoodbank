@@ -347,6 +347,46 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
+   About Section
+   -------------------------------------------------------------------------- */
+
+.section-lead {
+  font-size: var(--font-size-lg);
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+  font-style: italic;
+}
+
+.about-content {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.about-text h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-text p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-base);
+}
+
+@media (min-width: 48rem) {
+  .section-lead {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .about-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Hero Section
    -------------------------------------------------------------------------- */
 
