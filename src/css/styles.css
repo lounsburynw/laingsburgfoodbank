@@ -865,6 +865,87 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
+   Volunteer Section
+   -------------------------------------------------------------------------- */
+
+.volunteer-section {
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.volunteer-section-content {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.volunteer-section h2 {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.volunteer-section .section-lead {
+  margin-bottom: var(--spacing-xl);
+}
+
+.volunteer-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.volunteer-card {
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.volunteer-card h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.volunteer-card p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-base);
+}
+
+.volunteer-cta {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+}
+
+.volunteer-cta a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.volunteer-cta a:hover,
+.volunteer-cta a:focus {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+@media (min-width: 48rem) {
+  .volunteer-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .volunteer-section h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .volunteer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 

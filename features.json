@@ -118,7 +118,7 @@
         "description": "Placeholder section for future donation integration"
       },
       "volunteer_section": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 3,
         "description": "Placeholder for volunteer signup"
       },

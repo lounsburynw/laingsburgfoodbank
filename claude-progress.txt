@@ -214,3 +214,25 @@
 - Remaining P3 items: volunteer_section, needs_section, menu_section
 
 ---
+
+## Session 12 - Volunteer Section (2025-12-22)
+- Added "Volunteer With Us" section between donate and contact sections
+- Three volunteer opportunity cards:
+  - Food Distribution: Sorting donations, stocking shelves, client assistance
+  - Donation Pickup: Collecting donations from businesses and drives
+  - Special Events: Holiday distributions, fundraisers, community outreach
+- Design features:
+  - Gray background (section-alt) to alternate with green donate section
+  - White cards matching services/eligibility card style
+  - CTA with phone and email contact links
+- Added "Volunteer" link to main navigation
+- Added CSS styles:
+  - .volunteer-section with background-alt color
+  - .volunteer-grid with 3-column responsive layout
+  - .volunteer-card styling matching existing card patterns
+  - .volunteer-cta for centered contact info
+- Marked as implemented: volunteer_section
+- Foundation phase now 90% complete (18/20 items)
+- Remaining P3 items: needs_section, menu_section
+
+---
