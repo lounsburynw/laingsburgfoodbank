@@ -236,3 +236,27 @@
 - Remaining P3 items: needs_section, menu_section
 
 ---
+
+## Session 13 - Current Needs Section (2025-12-22)
+- Added "Current Needs" section between eligibility and donate sections
+- Three needs cards showing what the food bank needs:
+  - Most Needed Items (urgent/highlighted): proteins, peanut butter, cereal, vegetables, pasta
+  - Always Welcome: rice, beans, soups, boxed meals, oil, shelf-stable milk
+  - Non-Food Items: toiletries, paper products, diapers, detergent, cleaning supplies
+- Design features:
+  - White background to alternate with green donate section below
+  - First card uses green (primary) background to highlight urgent needs
+  - Bullet-point lists for easy scanning
+  - Note at bottom about drop-off during regular hours
+- Added "Needs" link to main navigation (between Eligibility and Donate)
+- Added CSS styles:
+  - .needs-section with white background
+  - .needs-grid with 3-column responsive layout
+  - .needs-card with gray background, .needs-card--urgent with green background
+  - .needs-list with styled bullet points
+  - .needs-note for centered bottom text
+- Marked as implemented: needs_section
+- Foundation phase now 95% complete (19/20 items)
+- Remaining P3 item: menu_section
+
+---

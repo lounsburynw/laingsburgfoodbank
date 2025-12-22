@@ -771,6 +771,110 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
+   Needs Section (Current Needs)
+   -------------------------------------------------------------------------- */
+
+.needs-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.needs-section-content {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.needs-section h2 {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.needs-section .section-lead {
+  margin-bottom: var(--spacing-xl);
+}
+
+.needs-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.needs-card {
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.needs-card h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.needs-card--urgent {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.needs-card--urgent h3 {
+  color: var(--color-background);
+  border-bottom-color: var(--color-secondary);
+}
+
+.needs-list {
+  list-style: none;
+  padding: 0;
+}
+
+.needs-list li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-light);
+}
+
+.needs-list li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.needs-card--urgent .needs-list li {
+  color: var(--color-background);
+}
+
+.needs-card--urgent .needs-list li::before {
+  color: var(--color-secondary);
+}
+
+.needs-note {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+}
+
+@media (min-width: 48rem) {
+  .needs-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .needs-section h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .needs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Donate Section
    -------------------------------------------------------------------------- */
 
