@@ -59,8 +59,8 @@
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
 
-  /* Focus outline */
-  --focus-outline: 3px solid var(--color-secondary);
+  /* Focus outline - using primary-light for better visibility on white */
+  --focus-outline: 3px solid var(--color-primary-light);
   --focus-outline-offset: 2px;
 }
 
@@ -412,7 +412,6 @@ a:focus {
 .hero-tagline {
   font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-xl);
-  opacity: 0.95;
 }
 
 .hero-cta {
@@ -664,11 +663,11 @@ a:focus {
 }
 
 .eligibility-card--highlight p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-background);
 }
 
 .eligibility-card--highlight .area-list li {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-background);
 }
 
 .area-list {
@@ -784,7 +783,6 @@ a:focus {
 
 .site-footer p {
   font-size: var(--font-size-sm);
-  opacity: 0.9;
 }
 
 @media (min-width: 48rem) {
