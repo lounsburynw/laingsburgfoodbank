@@ -59,7 +59,7 @@
     },
     "services": {
       "what_we_offer": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "List of services provided"
       },

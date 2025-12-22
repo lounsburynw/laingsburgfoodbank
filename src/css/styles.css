@@ -588,6 +588,46 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
+   Services Section
+   -------------------------------------------------------------------------- */
+
+.services-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.service-card {
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-card p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-base);
+}
+
+@media (min-width: 48rem) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (min-width: 64rem) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Contact Section
    -------------------------------------------------------------------------- */
 
