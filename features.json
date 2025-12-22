@@ -47,7 +47,7 @@
         "description": "Operating hours and address with map link"
       },
       "contact_info": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Phone, email, social media links"
       },

@@ -84,3 +84,22 @@
 - Next P1 items: contact_info, responsive_layout
 
 ---
+
+## Session 5 - Contact Information Section (2025-12-21)
+- Added contact section with real data from existing website:
+  - Phone: (517) 651-5531 with tel: link
+  - Email: laingsburgumc@gmail.com with mailto: link
+  - Facebook link with external link treatment (target="_blank", rel="noopener noreferrer")
+- Used semantic HTML:
+  - Three contact cards in a grid
+  - Proper link types for phone (tel:) and email (mailto:)
+  - External link for Facebook with security attributes
+- Added CSS styles:
+  - Three-column grid layout on tablet+
+  - Card-based design with subtle background
+  - Consistent styling with info section
+  - Centered text for contact cards
+- Marked as implemented: contact_info
+- Next P1 item: responsive_layout
+
+---

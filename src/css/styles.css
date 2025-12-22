@@ -408,3 +408,72 @@ a:focus {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* --------------------------------------------------------------------------
+   Contact Section
+   -------------------------------------------------------------------------- */
+
+.contact-section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.contact-section-content {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-primary);
+}
+
+.contact-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.contact-card {
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+}
+
+.contact-card h3 {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-link {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  text-decoration: underline;
+}
+
+/* Tablet and up - three column grid */
+@media (min-width: 48rem) {
+  .contact-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .contact-section h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
