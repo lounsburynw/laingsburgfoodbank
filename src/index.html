@@ -10,16 +10,18 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header>
-    <h1>Laingsburg Area Food Bank</h1>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#hours">Hours &amp; Location</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <p class="site-title"><a href="#">Laingsburg Area Food Bank</a></p>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#hours">Hours &amp; Location</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main id="main-content">
@@ -34,9 +36,11 @@
       </div>
     </section>
 
-    <section id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Us</h2>
-      <p>The Laingsburg Area Food Bank provides food assistance to families and individuals in the Laingsburg community.</p>
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="section-content">
+        <h2 id="about-heading" class="section-title">About Us</h2>
+        <p class="section-text">The Laingsburg Area Food Bank provides food assistance to families and individuals in the Laingsburg community.</p>
+      </div>
     </section>
 
     <section id="hours" class="info-section" aria-labelledby="hours-heading">
@@ -71,9 +75,11 @@
       </div>
     </section>
 
-    <section id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">Our Services</h2>
-      <p>Services information coming soon.</p>
+    <section id="services" class="section section-alt" aria-labelledby="services-heading">
+      <div class="section-content">
+        <h2 id="services-heading" class="section-title">Our Services</h2>
+        <p class="section-text">Services information coming soon.</p>
+      </div>
     </section>
 
     <section id="contact" class="contact-section" aria-labelledby="contact-heading">
@@ -109,7 +115,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2025 Laingsburg Area Food Bank. All rights reserved.</p>
   </footer>
 </body>
