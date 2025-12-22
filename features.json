@@ -14,7 +14,7 @@
         "description": "Create src/, css/, js/, assets/ directories"
       },
       "base_html": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Create index.html with semantic HTML5 structure"
       },
@@ -92,7 +92,7 @@
     },
     "accessibility": {
       "semantic_html": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Proper heading hierarchy, landmarks"
       },

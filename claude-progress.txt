@@ -19,4 +19,14 @@
 - Marked project_structure as implemented in features.json
 - P0 complete, next P1 items: base_html, css_reset, hours_location, contact_info, responsive_layout, semantic_html
 
+## Session 1 (continued) - Base HTML Structure (2025-12-21)
+- Created src/index.html with semantic HTML5 structure
+- Included required meta tags: charset, viewport, title, description
+- Added semantic landmarks: header, nav, main, footer
+- Proper heading hierarchy: single h1, section h2s with aria-labelledby
+- Added skip link for keyboard accessibility
+- Placeholder sections for: about, hours, services, contact
+- Marked base_html and semantic_html as implemented
+- Next P1 items: css_reset, hero_section, hours_location, contact_info, responsive_layout
+
 ---
