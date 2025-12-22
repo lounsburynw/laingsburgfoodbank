@@ -192,3 +192,25 @@
 - Remaining P3 items: donation_section, volunteer_section, needs_section, menu_section
 
 ---
+
+## Session 11 - Donation Placeholder Section (2025-12-22)
+- Added "Support Our Mission" donation section with three cards:
+  - Monetary Donations: Financial contributions info with "Online donations coming soon" note
+  - Food Donations: Drop-off info with most needed items listed
+  - Volunteer Your Time: Brief intro to volunteering opportunities
+- Design features:
+  - Green background (matches hero) to visually stand out
+  - White cards for content contrast
+  - Contact info at bottom for arranging donations
+- Added "Donate" link to main navigation
+- Added CSS styles:
+  - .donate-section with primary background color
+  - .donate-grid with 3-column responsive layout
+  - .donate-card styling with shadow for depth
+  - .donate-note for italicized "coming soon" text
+  - .donate-contact for centered contact info with orange links
+- Marked as implemented: donation_section
+- Foundation phase now 85% complete (17/20 items)
+- Remaining P3 items: volunteer_section, needs_section, menu_section
+
+---

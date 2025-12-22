@@ -771,6 +771,100 @@ a:focus {
 }
 
 /* --------------------------------------------------------------------------
+   Donate Section
+   -------------------------------------------------------------------------- */
+
+.donate-section {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.donate-section-content {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.donate-section h2 {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-background);
+}
+
+.donate-section .section-lead {
+  color: var(--color-background);
+  margin-bottom: var(--spacing-xl);
+}
+
+.donate-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.donate-card {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.donate-card h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.donate-card p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-sm);
+}
+
+.donate-card p:last-child {
+  margin-bottom: 0;
+}
+
+.donate-note {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+.donate-contact {
+  text-align: center;
+  font-size: var(--font-size-lg);
+}
+
+.donate-contact a {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.donate-contact a:hover,
+.donate-contact a:focus {
+  color: var(--color-background);
+  text-decoration: underline;
+}
+
+@media (min-width: 48rem) {
+  .donate-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .donate-section h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .donate-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 
