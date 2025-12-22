@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-12-21",
+
+  "current_phase": "foundation",
+  "active_checklist": "features.json",
+
+  "phases": {
+    "foundation": {
+      "description": "Core site structure and landing page",
+      "checklist": "features.json",
+      "status": "active",
+      "focus": [
+        "Project structure",
+        "Landing page with critical info",
+        "Basic styling",
+        "Mobile responsiveness"
+      ]
+    },
+    "content": {
+      "description": "Real content, images, and copy",
+      "checklist": "content.json",
+      "status": "pending",
+      "focus": [
+        "Actual food bank info",
+        "Photos and branding",
+        "Contact details",
+        "Hours and location"
+      ]
+    },
+    "features": {
+      "description": "Interactive features and utilities",
+      "checklist": "features.json",
+      "status": "pending",
+      "focus": [
+        "Donation integration",
+        "Volunteer signup",
+        "Needs board",
+        "Food menu"
+      ]
+    },
+    "polish": {
+      "description": "Final polish and optimization",
+      "checklist": "polish.json",
+      "status": "pending",
+      "focus": [
+        "Accessibility audit",
+        "Performance optimization",
+        "SEO",
+        "Cross-browser testing"
+      ]
+    }
+  },
+
+  "progression": ["foundation", "content", "features", "polish"],
+
+  "transition_criteria": {
+    "foundation_to_content": "Landing page complete with placeholder content",
+    "content_to_features": "All real content in place",
+    "features_to_polish": "All interactive features working",
+    "polish_to_launch": "Accessibility and performance targets met"
+  }
+}

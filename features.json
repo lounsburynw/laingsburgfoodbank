@@ -1,0 +1,137 @@
+{
+  "version": "1.0",
+  "phase": "foundation",
+  "last_updated": "2025-12-21",
+
+  "category_order": ["structure", "landing_page", "styling", "utilities"],
+
+  "structure": {
+    "description": "Project foundation and setup",
+    "setup": {
+      "project_structure": {
+        "status": "not_implemented",
+        "priority": 0,
+        "description": "Create src/, css/, js/, assets/ directories"
+      },
+      "base_html": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Create index.html with semantic HTML5 structure"
+      },
+      "css_reset": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Add CSS reset and base variables"
+      }
+    }
+  },
+
+  "landing_page": {
+    "description": "Core landing page sections",
+    "hero": {
+      "hero_section": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Welcome banner with food bank name and tagline"
+      },
+      "cta_buttons": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Primary CTAs: Donate, Volunteer, Get Help"
+      }
+    },
+    "info": {
+      "hours_location": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Operating hours and address with map link"
+      },
+      "contact_info": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Phone, email, social media links"
+      },
+      "about_section": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Brief mission statement and history"
+      }
+    },
+    "services": {
+      "what_we_offer": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "List of services provided"
+      },
+      "who_we_serve": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Eligibility info and service area"
+      }
+    }
+  },
+
+  "styling": {
+    "description": "Visual design and responsiveness",
+    "design": {
+      "color_scheme": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Define color palette (warm, welcoming colors)"
+      },
+      "typography": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Font choices for headings and body"
+      },
+      "responsive_layout": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Mobile-first responsive design"
+      }
+    },
+    "accessibility": {
+      "semantic_html": {
+        "status": "not_implemented",
+        "priority": 1,
+        "description": "Proper heading hierarchy, landmarks"
+      },
+      "color_contrast": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "WCAG AA contrast ratios"
+      },
+      "keyboard_nav": {
+        "status": "not_implemented",
+        "priority": 2,
+        "description": "Focusable elements, skip links"
+      }
+    }
+  },
+
+  "utilities": {
+    "description": "Extensibility hooks for future features",
+    "placeholders": {
+      "donation_section": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Placeholder section for future donation integration"
+      },
+      "volunteer_section": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Placeholder for volunteer signup"
+      },
+      "needs_section": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Placeholder for current needs/wants"
+      },
+      "menu_section": {
+        "status": "not_implemented",
+        "priority": 3,
+        "description": "Placeholder for food availability menu"
+      }
+    }
+  }
+}
