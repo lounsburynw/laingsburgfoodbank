@@ -42,7 +42,7 @@
     },
     "info": {
       "hours_location": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Operating hours and address with map link"
       },

@@ -66,3 +66,21 @@
 - Next P1 items: hours_location, contact_info, responsive_layout
 
 ---
+
+## Session 4 - Hours & Location Section (2025-12-21)
+- Added hours and location section with real data:
+  - Hours: Monday 1-3 PM, Thursday 6-8 PM
+  - Location: Laingsburg United Methodist Church, 210 Crum St
+  - Google Maps link for directions
+- Used semantic HTML:
+  - Definition list (dl/dt/dd) for hours
+  - Address element for location
+  - Target="_blank" with rel="noopener noreferrer" for external link
+- Added CSS styles:
+  - Two-column grid layout on tablet+
+  - Card-based design with subtle shadow
+  - Responsive padding and typography
+- Marked as implemented: hours_location
+- Next P1 items: contact_info, responsive_layout
+
+---
