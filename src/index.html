@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Laingsburg Area Food Bank</title>
   <meta name="description" content="Laingsburg Area Food Bank serves the Laingsburg, Michigan community with food assistance, resources, and support for those in need.">
+  <meta name="theme-color" content="#1a5f2a">
+  <!-- Preconnect to CDN for faster script loading -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <!-- Inline SVG favicon to avoid 404 and extra request -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥫</text></svg>">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -326,8 +332,8 @@
   </footer>
 
   <!-- YAML parser for loading content from data files -->
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <!-- Content loader - populates sections from _data/*.yml files -->
-  <script src="js/content-loader.js"></script>
+  <script defer src="js/content-loader.js"></script>
 </body>
 </html>
