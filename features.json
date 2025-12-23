@@ -3,7 +3,7 @@
   "phase": "foundation",
   "last_updated": "2025-12-22",
 
-  "category_order": ["structure", "landing_page", "styling", "utilities"],
+  "category_order": ["structure", "landing_page", "styling", "utilities", "documentation"],
 
   "structure": {
     "description": "Project foundation and setup",
@@ -131,6 +131,29 @@
         "status": "implemented",
         "priority": 3,
         "description": "Placeholder for food availability menu"
+      }
+    }
+  },
+
+  "documentation": {
+    "description": "Project documentation and deployment",
+    "docs": {
+      "readme": {
+        "status": "implemented",
+        "priority": 1,
+        "description": "Create README.md with project overview, setup instructions, and contribution guidelines"
+      },
+      "deployment_guide": {
+        "status": "implemented",
+        "priority": 1,
+        "description": "Document GitHub Pages setup, custom domain configuration, and deployment process"
+      }
+    },
+    "commands": {
+      "deploy_command": {
+        "status": "implemented",
+        "priority": 2,
+        "description": "Create /deploy slash command to push changes to production (GitHub Pages)"
       }
     }
   }
