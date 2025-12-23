@@ -1,0 +1,12 @@
+# Robots.txt for Laingsburg Area Food Bank
+# https://laingsburgfoodbank.org
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Block admin section from indexing
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://laingsburgfoodbank.org/sitemap.xml

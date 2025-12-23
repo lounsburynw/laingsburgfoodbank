@@ -721,3 +721,27 @@ Performed comprehensive screen reader accessibility audit:
 - `print_styles` (P3): Ensure page prints cleanly
 
 ---
+
+## Session 27 - Robots.txt (2025-12-23)
+
+### Task
+- Created `robots.txt` for search engine crawler directives (P3)
+
+### Implementation
+- Created `src/robots.txt` with:
+  - `User-agent: *` allowing all crawlers
+  - `Allow: /` for public content
+  - `Disallow: /admin/` to block CMS admin from indexing
+  - `Sitemap:` directive pointing to sitemap.xml
+
+### Files Changed
+- `src/robots.txt` (new)
+- `polish.json`: Marked robots_txt as implemented
+
+### Progress
+- Polish phase: 15/16 items complete (94%)
+
+### Next Steps
+- `print_styles` (P3): Ensure page prints cleanly - **FINAL POLISH ITEM**
+
+---
