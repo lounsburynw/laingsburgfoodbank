@@ -208,6 +208,11 @@ a:focus {
   top: var(--spacing-sm);
 }
 
+/* Skip link target - no outline needed, focus is for keyboard position only */
+#main-content:focus {
+  outline: none;
+}
+
 /* --------------------------------------------------------------------------
    Layout Container
    -------------------------------------------------------------------------- */

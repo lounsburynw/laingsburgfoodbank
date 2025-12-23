@@ -422,3 +422,33 @@ Changed `.donate-contact a` links from orange (#f5a623) to white (#ffffff) on gr
 - screen_reader_testing (P2): Test with VoiceOver/NVDA
 
 ---
+
+## Session 20 - Keyboard Navigation Audit (2025-12-22)
+
+### Completed
+- Performed manual keyboard navigation audit
+- Fixed skip link functionality
+
+### Issues Found & Fixed
+1. **Skip link didn't move focus**: Added `tabindex="-1"` to `<main id="main-content">` so skip link properly moves keyboard focus
+2. **Main outline on focus**: Added `#main-content:focus { outline: none; }` to prevent awkward outline
+
+### Audit Results
+- **Tab order**: 22 focusable elements, all in logical reading order
+- **Focus styles**: All interactive elements have visible focus indicators (3px green outline)
+- **Skip link**: Now works correctly (slides into view, moves focus to main content)
+- **Keyboard traps**: None found
+- **Motion**: `prefers-reduced-motion` is respected
+
+### Files Changed
+- `src/index.html`: Added `tabindex="-1"` to main element
+- `src/css/styles.css`: Added `#main-content:focus { outline: none; }`
+- `polish.json`: Marked keyboard_testing as implemented
+
+### Progress
+- Polish phase: 7/17 items complete (41%)
+
+### Next Steps
+- screen_reader_testing (P2): Test with VoiceOver/NVDA
+
+---

@@ -45,7 +45,7 @@
         "description": "Run axe/WAVE accessibility audit"
       },
       "keyboard_testing": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Manual keyboard navigation test"
       },
