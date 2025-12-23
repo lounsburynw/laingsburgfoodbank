@@ -121,9 +121,10 @@
         "notes": "Mobile audit completed. Added min-height: 44px to nav links, buttons, contact links, and map links for proper touch targets. Added overscroll-behavior-y: contain to prevent accidental pull-to-refresh. Added -webkit-tap-highlight-color: transparent to remove iOS tap flash. Responsive breakpoints verified at 30rem, 48rem, and 64rem. Phone/email links use proper tel: and mailto: protocols. No horizontal scroll issues - all widths use relative units."
       },
       "print_styles": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 3,
-        "description": "Ensure page prints cleanly"
+        "description": "Ensure page prints cleanly",
+        "notes": "Added @media print styles: black text on white for ink efficiency, hides navigation/buttons/skip-links, single-column layout, shows URLs for external links, page-break controls to keep sections together, proper @page margins, appropriate print font sizes."
       }
     }
   }

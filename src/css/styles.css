@@ -1183,3 +1183,181 @@ a:focus {
     padding: var(--spacing-xl);
   }
 }
+
+/* --------------------------------------------------------------------------
+   Print Styles
+   -------------------------------------------------------------------------- */
+
+@media print {
+  /* Reset colors for ink efficiency */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1.5cm;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Hide non-essential elements */
+  .skip-link,
+  .main-nav,
+  .hero-cta,
+  .btn,
+  .map-link {
+    display: none !important;
+  }
+
+  /* Keep header simple */
+  .site-header {
+    border-bottom: 2px solid #000;
+    padding: 0 0 0.5cm 0;
+    margin-bottom: 0.5cm;
+  }
+
+  .site-title {
+    font-size: 18pt;
+  }
+
+  /* Remove hero background color styling */
+  .hero {
+    padding: 0.5cm 0;
+    text-align: left;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .hero-title {
+    font-size: 24pt;
+    margin-bottom: 0.25cm;
+  }
+
+  .hero-tagline {
+    font-size: 12pt;
+    margin-bottom: 0;
+  }
+
+  /* Section styling */
+  .section,
+  .info-section,
+  .menu-section,
+  .needs-section,
+  .donate-section,
+  .volunteer-section,
+  .contact-section {
+    padding: 0.5cm 0;
+    page-break-inside: avoid;
+  }
+
+  .section-title,
+  .info-section h2,
+  .menu-section h2,
+  .needs-section h2,
+  .donate-section h2,
+  .volunteer-section h2,
+  .contact-section h2 {
+    font-size: 16pt;
+    margin-bottom: 0.25cm;
+    page-break-after: avoid;
+  }
+
+  .section-lead {
+    font-size: 11pt;
+    margin-bottom: 0.25cm;
+  }
+
+  /* Card styling for print */
+  .info-card,
+  .service-card,
+  .eligibility-card,
+  .menu-card,
+  .needs-card,
+  .donate-card,
+  .volunteer-card,
+  .contact-card {
+    border: 1px solid #ccc;
+    padding: 0.25cm;
+    margin-bottom: 0.25cm;
+    page-break-inside: avoid;
+  }
+
+  .info-card h3,
+  .service-card h3,
+  .eligibility-card h3,
+  .menu-card h3,
+  .needs-card h3,
+  .donate-card h3,
+  .volunteer-card h3,
+  .contact-card h3 {
+    font-size: 12pt;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.1cm;
+    margin-bottom: 0.15cm;
+  }
+
+  /* Grid layouts - single column for print */
+  .about-content,
+  .info-grid,
+  .services-grid,
+  .eligibility-grid,
+  .menu-grid,
+  .needs-grid,
+  .donate-grid,
+  .volunteer-grid,
+  .contact-grid {
+    display: block;
+  }
+
+  /* Expand links to show URLs */
+  a[href^="http"]::after,
+  a[href^="mailto"]::after,
+  a[href^="tel"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    font-weight: normal;
+  }
+
+  /* But hide URLs for internal links */
+  a[href^="#"]::after {
+    content: none;
+  }
+
+  /* Footer */
+  .site-footer {
+    border-top: 1px solid #000;
+    padding: 0.25cm 0;
+    margin-top: 0.5cm;
+  }
+
+  .site-footer p {
+    font-size: 10pt;
+  }
+
+  /* Address styling */
+  address {
+    font-style: normal;
+  }
+
+  /* List styling */
+  .area-list,
+  .menu-list,
+  .needs-list {
+    padding-left: 0.5cm;
+  }
+
+  .area-list li::before,
+  .menu-list li::before,
+  .needs-list li::before {
+    color: #000 !important;
+  }
+}
