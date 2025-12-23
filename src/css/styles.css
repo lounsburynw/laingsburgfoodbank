@@ -105,6 +105,8 @@ body {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent pull-to-refresh on mobile when scrolling up at top */
+  overscroll-behavior-y: contain;
 }
 
 /* Headings */
@@ -143,6 +145,8 @@ ol[role='list'] {
 a {
   color: var(--color-primary);
   text-decoration-skip-ink: auto;
+  /* Remove tap highlight on iOS */
+  -webkit-tap-highlight-color: transparent;
 }
 
 a:hover,
@@ -275,7 +279,10 @@ a:focus {
 
 .main-nav a {
   display: block;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
@@ -455,8 +462,11 @@ a:focus {
    -------------------------------------------------------------------------- */
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--spacing-sm) var(--spacing-lg);
+  min-height: 44px;
   font-size: var(--font-size-base);
   font-weight: 600;
   text-decoration: none;
@@ -569,6 +579,8 @@ a:focus {
   gap: var(--spacing-xs);
   font-weight: 600;
   text-decoration: none;
+  min-height: 44px;
+  padding: var(--spacing-xs) 0;
 }
 
 .map-link:hover,
@@ -846,7 +858,10 @@ a:focus {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-xs);
+  min-height: 44px;
+  padding: var(--spacing-xs) var(--spacing-sm);
 }
 
 .contact-link:hover,
