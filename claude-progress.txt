@@ -452,3 +452,47 @@ Changed `.donate-contact a` links from orange (#f5a623) to white (#ffffff) on gr
 - screen_reader_testing (P2): Test with VoiceOver/NVDA
 
 ---
+
+## Session 21 - Screen Reader Accessibility Audit (2025-12-23)
+
+### Task
+- screen_reader_testing (P2): Test with VoiceOver/NVDA
+
+### Audit Conducted
+Performed comprehensive screen reader accessibility audit:
+
+1. **Heading Hierarchy** - FIXED
+   - Issue: No `<h1>` on page; site title was `<p class="site-title">`
+   - Fix: Changed site title to `<h1 class="site-title">`
+   - Result: Proper h1 → h2 → h3 hierarchy
+
+2. **ARIA Landmarks** - PASSED
+   - Main nav has `aria-label="Main navigation"`
+   - All sections have `aria-labelledby` pointing to headings
+   - Implicit landmarks: banner (header), main, contentinfo (footer)
+
+3. **External Links** - FIXED
+   - Issue: Links with `target="_blank"` didn't indicate opening in new tab
+   - Fix: Added `<span class="visually-hidden">(opens in new tab)</span>` to:
+     - Get Directions link (line 90)
+     - Facebook link (line 315)
+
+4. **Forms** - N/A (no forms currently)
+
+5. **Images** - N/A (no images currently)
+
+6. **Dynamic Content** - PASSED
+   - content-loader.js runs on DOMContentLoaded (before user reads)
+   - No aria-live regions needed for initial page load pattern
+
+### Files Changed
+- `src/index.html`: Changed site title from `<p>` to `<h1>`, added visually-hidden text to external links
+- `polish.json`: Marked screen_reader_testing as implemented
+
+### Progress
+- Polish phase: 8/17 items complete (47%)
+
+### Next Steps
+- image_optimization (P2): Compress images, add lazy loading
+
+---

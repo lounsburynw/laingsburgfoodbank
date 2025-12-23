@@ -50,7 +50,7 @@
         "description": "Manual keyboard navigation test"
       },
       "screen_reader_testing": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Test with VoiceOver/NVDA"
       }
