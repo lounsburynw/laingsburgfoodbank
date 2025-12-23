@@ -40,7 +40,7 @@
     "description": "WCAG 2.1 AA compliance verification",
     "audit": {
       "automated_scan": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Run axe/WAVE accessibility audit"
       },

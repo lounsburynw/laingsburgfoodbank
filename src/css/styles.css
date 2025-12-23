@@ -1037,14 +1037,14 @@ a:focus {
 }
 
 .donate-contact a {
-  color: var(--color-secondary);
+  color: var(--color-background);
   font-weight: 600;
+  text-decoration: underline;
 }
 
 .donate-contact a:hover,
 .donate-contact a:focus {
-  color: var(--color-background);
-  text-decoration: underline;
+  color: var(--color-secondary);
 }
 
 @media (min-width: 48rem) {

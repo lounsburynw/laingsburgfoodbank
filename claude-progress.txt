@@ -392,3 +392,33 @@
 - performance items (P2): image_optimization, lighthouse_audit
 
 ---
+
+## Session 19 - Accessibility Audit (2025-12-22)
+
+### Completed
+- Ran pa11y automated accessibility scan
+- Fixed contrast ratio issue in donate section links
+
+### Audit Results
+- **Before fix**: 2 errors (contrast ratio 3.82:1, needed 4.5:1)
+- **After fix**: 0 errors
+- Warnings: heading structure (h2 vs h1), navigation lists (informational)
+- 15+ notices (manual verification reminders)
+
+### Fix Applied
+Changed `.donate-contact a` links from orange (#f5a623) to white (#ffffff) on green background:
+- Default: white with underline (high contrast)
+- Hover: orange (acceptable for non-essential state change)
+
+### Files Changed
+- `src/css/styles.css`: Fixed link contrast in donate section
+- `polish.json`: marked automated_scan as implemented
+
+### Progress
+- Polish phase: 6/17 items complete (35%)
+
+### Next Steps
+- keyboard_testing (P2): Manual keyboard navigation test
+- screen_reader_testing (P2): Test with VoiceOver/NVDA
+
+---
