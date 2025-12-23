@@ -684,3 +684,40 @@ Performed comprehensive screen reader accessibility audit:
 - Polish phase: 13/16 items complete (81%)
 
 ---
+## Session 26 - Sitemap (2025-12-23)
+
+### Task
+- `sitemap` (P3): Generate sitemap.xml
+
+### Implementation
+- Created `src/sitemap.xml` with XML sitemap standard format
+- Single URL entry for homepage: https://laingsburgfoodbank.org/
+- Set priority to 1.0 (highest) for homepage
+- Set changefreq to weekly (appropriate for food bank content updates)
+- Excluded /admin page (CMS interface should not be indexed)
+
+### Sitemap Contents
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://laingsburgfoodbank.org/</loc>
+    <lastmod>2025-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+### Files Changed
+- `src/sitemap.xml` (new)
+- `polish.json`: Marked sitemap as implemented
+
+### Progress
+- Polish phase: 14/16 items complete (88%)
+
+### Next Steps
+- `robots_txt` (P3): Create robots.txt
+- `print_styles` (P3): Ensure page prints cleanly
+
+---

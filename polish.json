@@ -91,9 +91,10 @@
         "notes": "Added OG tags, Twitter Card tags, and JSON-LD structured data for FoodEstablishment"
       },
       "sitemap": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 3,
-        "description": "Generate sitemap.xml"
+        "description": "Generate sitemap.xml",
+        "notes": "Created sitemap.xml with homepage entry. Uses canonical URL https://laingsburgfoodbank.org/. Excludes /admin page from indexing."
       },
       "robots_txt": {
         "status": "not_implemented",
