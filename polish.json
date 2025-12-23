@@ -84,9 +84,10 @@
     "description": "Search engine optimization",
     "basics": {
       "meta_tags": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
-        "description": "Open Graph, Twitter cards, structured data"
+        "description": "Open Graph, Twitter cards, structured data",
+        "notes": "Added OG tags, Twitter Card tags, and JSON-LD structured data for FoodEstablishment"
       },
       "sitemap": {
         "status": "not_implemented",
