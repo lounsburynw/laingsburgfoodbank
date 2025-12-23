@@ -24,7 +24,7 @@
         "description": "Extract content to data files (YAML/JSON) for CMS editing"
       },
       "template_integration": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Update HTML to render from data files instead of hardcoded content"
       },
