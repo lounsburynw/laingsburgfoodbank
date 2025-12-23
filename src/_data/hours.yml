@@ -1,0 +1,14 @@
+hours:
+  - day: Monday
+    open: "1:00 PM"
+    close: "3:00 PM"
+  - day: Thursday
+    open: "6:00 PM"
+    close: "8:00 PM"
+
+location:
+  name: Laingsburg United Methodist Church
+  street: 210 Crum St
+  city: Laingsburg
+  state: MI
+  zip: "48848"

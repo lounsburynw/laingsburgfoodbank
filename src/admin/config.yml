@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: owner/laingsburgfoodbank  # Update with actual GitHub username/repo
+  branch: main
+  base_url: https://api.netlify.com  # Required for GitHub OAuth - see setup docs
+
+# Where uploaded media files are stored
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+
+# Content collections for editing
+collections:
+  # Site-wide settings
+  - name: settings
+    label: Site Settings
+    files:
+      - name: hours
+        label: Hours & Location
+        file: src/_data/hours.yml
+        fields:
+          - label: Operating Hours
+            name: hours
+            widget: list
+            fields:
+              - { label: Day, name: day, widget: string }
+              - { label: Open Time, name: open, widget: string }
+              - { label: Close Time, name: close, widget: string }
+          - label: Location
+            name: location
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Street Address, name: street, widget: string }
+              - { label: City, name: city, widget: string }
+              - { label: State, name: state, widget: string }
+              - { label: ZIP Code, name: zip, widget: string }
+
+      - name: contact
+        label: Contact Information
+        file: src/_data/contact.yml
+        fields:
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Facebook URL, name: facebook, widget: string }
+
+  # Food menu items
+  - name: menu
+    label: Food Menu
+    file: src/_data/menu.yml
+    fields:
+      - label: Produce
+        name: produce
+        widget: list
+        field: { label: Item, name: item, widget: string }
+      - label: Proteins
+        name: proteins
+        widget: list
+        field: { label: Item, name: item, widget: string }
+      - label: Grains & Dairy
+        name: grains_dairy
+        widget: list
+        field: { label: Item, name: item, widget: string }
+      - label: Pantry Staples
+        name: pantry
+        widget: list
+        field: { label: Item, name: item, widget: string }
+
+  # Current needs
+  - name: needs
+    label: Current Needs
+    file: src/_data/needs.yml
+    fields:
+      - label: Most Needed Items
+        name: most_needed
+        widget: list
+        field: { label: Item, name: item, widget: string }
+      - label: Always Welcome
+        name: always_welcome
+        widget: list
+        field: { label: Item, name: item, widget: string }
+      - label: Non-Food Items
+        name: non_food
+        widget: list
+        field: { label: Item, name: item, widget: string }

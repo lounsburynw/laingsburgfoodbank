@@ -2,8 +2,8 @@
   "version": "1.0",
   "last_updated": "2025-12-21",
 
-  "current_phase": "foundation",
-  "active_checklist": "features.json",
+  "current_phase": "polish",
+  "active_checklist": "polish.json",
 
   "phases": {
     "foundation": {

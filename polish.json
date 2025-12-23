@@ -9,17 +9,17 @@
     "description": "Enable non-technical content editing",
     "cms": {
       "decap_cms_setup": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Install and configure Decap CMS for GitHub Pages"
       },
       "admin_interface": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Create /admin page with CMS login"
       },
       "content_collections": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 1,
         "description": "Extract content to data files (YAML/JSON) for CMS editing"
       },
