@@ -361,3 +361,34 @@
 - accessibility audit items (P2): automated_scan, keyboard_testing, screen_reader_testing
 
 ---
+
+## Session 18 - CMS Documentation (2025-12-22)
+
+### Completed
+- Created `docs/CONTENT-EDITOR-GUIDE.md` - comprehensive user guide for content editors
+
+### Documentation Covers
+- Quick reference table for what to update and where
+- **CMS Method**: Step-by-step instructions for Decap CMS web interface
+  - Accessing the CMS (/admin/)
+  - Editing hours, location, contact info
+  - Managing food menu categories
+  - Updating current needs lists
+- **Direct File Method**: Instructions for GitHub file editing
+  - YAML format basics (indentation, lists, quotes)
+  - Example content for each data file
+- Common tasks (adding distribution days, seasonal updates, highlighting urgent needs)
+- Troubleshooting section (changes not appearing, login issues, YAML errors)
+
+### Files Changed
+- `docs/CONTENT-EDITOR-GUIDE.md` (new)
+- `polish.json`: marked cms_documentation as implemented
+
+### Progress
+- Polish phase: 5/17 items complete (29%)
+
+### Next Steps
+- accessibility audit items (P2): automated_scan, keyboard_testing, screen_reader_testing
+- performance items (P2): image_optimization, lighthouse_audit
+
+---

@@ -29,7 +29,7 @@
         "description": "Update HTML to render from data files instead of hardcoded content"
       },
       "cms_documentation": {
-        "status": "not_implemented",
+        "status": "implemented",
         "priority": 2,
         "description": "Write user guide for content editors"
       }
