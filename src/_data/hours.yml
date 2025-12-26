@@ -3,12 +3,32 @@ hours:
     open: "1:00 PM"
     close: "3:00 PM"
   - day: Thursday
-    open: "6:00 PM"
-    close: "8:00 PM"
+    open: "5:00 PM"
+    close: "7:00 PM"
 
 location:
   name: Laingsburg United Methodist Church
-  street: 210 Crum St
+  street: 210 North Crum Street
   city: Laingsburg
   state: MI
   zip: "48848"
+
+# Holiday Closures - Update this list each year
+# Format: date (like "Jan 1" or "Dec 24-25"), name (holiday name)
+closures:
+  - date: "Jan 1"
+    name: New Year's Day
+  - date: "Jan 20"
+    name: MLK Day
+  - date: "Apr 17"
+    name: Easter Week
+  - date: "May 26"
+    name: Memorial Day
+  - date: "Jul 3-4"
+    name: Independence Day
+  - date: "Sep 1"
+    name: Labor Day
+  - date: "Nov 27"
+    name: Thanksgiving
+  - date: "Dec 25"
+    name: Christmas

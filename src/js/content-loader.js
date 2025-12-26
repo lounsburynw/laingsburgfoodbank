@@ -41,11 +41,27 @@
   }
 
   /**
+   * Render closures section
+   * @param {Object} data - Closures data from hours.yml
+   */
+  function renderClosures(data) {
+    var closureList = document.querySelector('.closure-list');
+    if (!closureList || !data.closures) return;
+
+    closureList.innerHTML = data.closures.map(function(item) {
+      return '<li class="closure-item">' +
+        '<span class="closure-date">' + escapeHTML(item.date) + '</span>' +
+        '<span class="closure-name">' + escapeHTML(item.name) + '</span>' +
+        '</li>';
+    }).join('');
+  }
+
+  /**
    * Render location section
    * @param {Object} data - Location data from hours.yml
    */
   function renderLocation(data) {
-    const locationCard = document.querySelector('#hours .info-card:last-child address');
+    const locationCard = document.querySelector('#hours .info-card--location address');
     if (!locationCard || !data.location) return;
 
     const loc = data.location;
@@ -56,7 +72,7 @@
     locationCard.innerHTML = address;
 
     // Update map link
-    const mapLink = document.querySelector('#hours .map-link');
+    const mapLink = document.querySelector('#hours .info-card--location .map-link');
     if (mapLink) {
       const mapQuery = encodeURIComponent(loc.street + ' ' + loc.city + ' ' + loc.state + ' ' + loc.zip);
       mapLink.href = 'https://maps.google.com/?q=' + mapQuery;
@@ -182,6 +198,7 @@
       if (results[0].status === 'fulfilled') {
         renderHours(results[0].value);
         renderLocation(results[0].value);
+        renderClosures(results[0].value);
       }
 
       if (results[1].status === 'fulfilled') {

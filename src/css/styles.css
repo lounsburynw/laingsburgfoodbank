@@ -656,6 +656,77 @@ a:focus {
   text-decoration: underline;
 }
 
+/* Hours closures dropdown */
+.hours-closures {
+  margin-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-sm);
+}
+
+.hours-closures summary {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.hours-closures summary::-webkit-details-marker {
+  display: none;
+}
+
+.hours-closures summary::before {
+  content: "+";
+  font-weight: 600;
+  font-size: var(--font-size-base);
+}
+
+.hours-closures[open] summary::before {
+  content: "−";
+}
+
+.hours-closures summary:hover {
+  text-decoration: underline;
+}
+
+/* Closure list */
+.closure-list {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.closure-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+  font-size: var(--font-size-sm);
+}
+
+.closure-date {
+  font-weight: 600;
+  color: var(--color-text);
+  min-width: 4rem;
+}
+
+.closure-name {
+  color: var(--color-text-light);
+  text-align: right;
+}
+
+.closure-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-top: var(--spacing-sm);
+}
+
 /* Tablet and up - two column grid */
 @media (min-width: 48rem) {
   .info-section {
@@ -1428,6 +1499,32 @@ a:focus {
     border-bottom: 1px solid #000;
     padding-bottom: 0.1cm;
     margin-bottom: 0.15cm;
+  }
+
+  /* Show closures expanded for print */
+  .hours-closures {
+    border-top: none;
+    margin-top: 0.15cm;
+  }
+
+  .hours-closures summary {
+    font-weight: 600;
+  }
+
+  .hours-closures summary::before {
+    display: none;
+  }
+
+  .hours-closures .closure-list {
+    display: flex !important;
+  }
+
+  .closure-item {
+    padding: 0.05cm 0;
+  }
+
+  .closure-date {
+    min-width: 1.5cm;
   }
 
   /* Show all FAQ answers for print */
