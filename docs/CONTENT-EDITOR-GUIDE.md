@@ -1,232 +1,253 @@
 # Content Editor Guide
 
-This guide explains how to update website content for the Laingsburg Area Food Bank website.
+This guide explains how to update website content for the Laingsburg Area Food Bank website using Google Sheets.
 
 ## Quick Reference
 
-| What to Update | CMS Section | File (for direct editing) |
-|----------------|-------------|---------------------------|
-| Hours of operation | Site Settings > Hours & Location | `src/_data/hours.yml` |
-| Address/location | Site Settings > Hours & Location | `src/_data/hours.yml` |
-| Phone/email/Facebook | Site Settings > Contact Information | `src/_data/contact.yml` |
-| Available food items | Food Menu | `src/_data/menu.yml` |
-| Items we need | Current Needs | `src/_data/needs.yml` |
+| What to Update | Sheet Tab |
+|----------------|-----------|
+| Urgent announcements (snow days, etc.) | `alerts` |
+| Hours of operation | `hours` |
+| Holiday closures | `closures` |
+| Address/location | `location` |
+| Phone/email/Facebook | `contact` |
+| Available food items | `menu` |
+| Items we need | `needs` |
+| FAQ questions | `faq` |
+| About Us text | `about` |
+| Services we offer | `services` |
+| Volunteer opportunities | `volunteers` |
 
 ---
 
-## Option 1: Using the CMS (Recommended)
+## Accessing the Content Sheet
 
-The Content Management System (CMS) provides a user-friendly interface for editing content without touching code.
-
-### Accessing the CMS
-
-1. Go to: `https://[your-website]/admin/`
-2. Log in with your Netlify Identity account
-3. You'll see the content editor dashboard
-
-### Editing Hours & Location
-
-1. Click **Site Settings** in the left sidebar
-2. Click **Hours & Location**
-3. You'll see two sections:
-
-**Operating Hours:**
-- Each row has Day, Open Time, and Close Time
-- Click the **+** button to add a new day
-- Click the **X** next to a row to remove it
-- Example: Day: "Saturday", Open: "9:00 AM", Close: "12:00 PM"
-
-**Location:**
-- Edit the address fields as needed
-- All fields are required
-
-4. Click **Publish** (top right) to save changes
-
-### Editing Contact Information
-
-1. Click **Site Settings** > **Contact Information**
-2. Update any of these fields:
-   - **Phone**: Format as (517) 555-1234
-   - **Email**: The email address for inquiries
-   - **Facebook URL**: Full URL like `https://www.facebook.com/yourpage`
-3. Click **Publish** to save
-
-### Editing the Food Menu
-
-The food menu shows what's currently available for distribution.
-
-1. Click **Food Menu** in the left sidebar
-2. You'll see four categories:
-   - **Produce**: Fresh and canned fruits/vegetables
-   - **Proteins**: Meats, beans, peanut butter, eggs
-   - **Grains & Dairy**: Bread, pasta, cereal, milk
-   - **Pantry Staples**: Soups, boxed meals, cooking supplies
-
-3. To add an item: Click the **+** button in that category
-4. To remove an item: Click the **X** next to it
-5. To reorder: Drag items up or down
-6. Click **Publish** to save
-
-### Editing Current Needs
-
-The needs section shows what donations are most helpful.
-
-1. Click **Current Needs** in the left sidebar
-2. You'll see three categories:
-   - **Most Needed Items**: High-priority donations
-   - **Always Welcome**: Regular staples we always accept
-   - **Non-Food Items**: Toiletries, paper products, etc.
-
-3. Add, remove, or reorder items as needed
-4. Click **Publish** to save
+1. Open the Google Sheet (bookmark this link): `[SHEET_URL_HERE]`
+2. You'll see tabs at the bottom for each content section
+3. Edit the cells directly - changes go live within 5 minutes
 
 ---
 
-## Option 2: Direct File Editing
+## Tab-by-Tab Instructions
 
-For quick edits or if the CMS is unavailable, you can edit files directly on GitHub.
+### Alerts Tab (Announcements)
 
-### How to Edit Files on GitHub
+Use this for time-sensitive announcements like snow closures, special events, or urgent notices.
 
-1. Go to the repository on GitHub
-2. Navigate to `src/_data/`
-3. Click on the file you want to edit
-4. Click the pencil icon (Edit this file)
-5. Make your changes
-6. Scroll down and click **Commit changes**
-7. Add a brief description of what you changed
-8. Click **Commit changes** again
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| active | TRUE or FALSE | TRUE |
+| type | info, warning, or urgent | warning |
+| title | Short headline | Snow Day Closure |
+| message | The full message | Closed today due to weather. Stay safe! |
+| link_text | Optional button text | Learn more |
+| link_url | Optional link | #hours |
+| start_date | Optional: when to start showing | 2025-01-15 |
+| end_date | Optional: when to stop showing | 2025-01-16 |
 
-### File Format (YAML)
+**Alert Types:**
+- `info` - Blue background (general announcements)
+- `warning` - Orange background (important notices)
+- `urgent` - Red background (emergencies, closures)
 
-Content files use YAML format. Key rules:
-- **Indentation matters**: Use 2 spaces (not tabs)
-- **Lists start with a dash**: `- Item name`
-- **Quotes around special values**: Use quotes for times like `"1:00 PM"`
+**To remove an alert:** Set `active` to FALSE (or delete the row).
 
-### Example: Updating Hours (hours.yml)
+---
 
-```yaml
-hours:
-  - day: Monday
-    open: "1:00 PM"
-    close: "3:00 PM"
-  - day: Thursday
-    open: "6:00 PM"
-    close: "8:00 PM"
-  - day: Saturday
-    open: "9:00 AM"
-    close: "11:00 AM"
+### Hours Tab
 
-location:
-  name: Laingsburg United Methodist Church
-  street: 210 Crum St
-  city: Laingsburg
-  state: MI
-  zip: "48848"
-```
+Each row is one day the food bank is open.
 
-### Example: Updating Contact (contact.yml)
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| day | Day of the week | Monday |
+| open | Opening time | 1:00 PM |
+| close | Closing time | 3:00 PM |
 
-```yaml
-phone: "(517) 651-5531"
-email: laingsburgumc@gmail.com
-facebook: https://www.facebook.com/laingsburgareafoodbank
-```
+---
 
-### Example: Updating Food Menu (menu.yml)
+### Closures Tab
 
-```yaml
-produce:
-  - Fresh fruits (seasonal)
-  - Fresh vegetables
-  - Canned fruits and vegetables
+List all holiday closures for the year.
 
-proteins:
-  - Canned meats (tuna, chicken)
-  - Peanut butter
-  - Dried and canned beans
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| date | Date or date range | Dec 25 |
+| name | Holiday name | Christmas |
 
-grains_dairy:
-  - Bread and baked goods
-  - Rice and pasta
-  - Cereal and oatmeal
+---
 
-pantry:
-  - Soups and stews
-  - Boxed meals
-  - Cooking oil
-```
+### Location Tab
 
-### Example: Updating Needs (needs.yml)
+Single row with the food bank address.
 
-```yaml
-most_needed:
-  - Canned proteins (tuna, chicken, beans)
-  - Peanut butter
-  - Cereal
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| name | Building name | Laingsburg United Methodist Church |
+| street | Street address | 210 North Crum Street |
+| city | City | Laingsburg |
+| state | State abbreviation | MI |
+| zip | ZIP code | 48848 |
 
-always_welcome:
-  - Rice and dried beans
-  - Canned soups and stews
-  - Boxed meals (mac & cheese, etc.)
+---
 
-non_food:
-  - Toiletries (soap, shampoo, toothpaste)
-  - Paper products
-  - Diapers and baby wipes
-```
+### Contact Tab
+
+Single row with contact information.
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| phone | Phone number | (517) 651-5531 |
+| email | Email address | laingsburgumc@gmail.com |
+| facebook | Full Facebook URL | https://www.facebook.com/laingsburgareafoodbank |
+
+---
+
+### Menu Tab
+
+Food items currently available. Each row is one item.
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| category | produce, proteins, grains_dairy, or pantry | produce |
+| item | Food item description | Fresh fruits (seasonal) |
+
+**Categories:**
+- `produce` - Fresh and canned fruits/vegetables
+- `proteins` - Meats, beans, peanut butter, eggs
+- `grains_dairy` - Bread, pasta, cereal, milk
+- `pantry` - Soups, boxed meals, cooking supplies
+
+---
+
+### Needs Tab
+
+Donation items needed. Each row is one item.
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| priority | most_needed, always_welcome, or non_food | most_needed |
+| item | Item description | Canned proteins (tuna, chicken) |
+
+**Priorities:**
+- `most_needed` - Shows with orange "Most Needed" label
+- `always_welcome` - Regular staples
+- `non_food` - Toiletries, paper products, etc.
+
+---
+
+### FAQ Tab
+
+Frequently asked questions. Each row is one Q&A pair.
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| order | Number for sorting (1, 2, 3...) | 1 |
+| question | The question | Who can use the food bank? |
+| answer | The answer | Anyone in the Laingsburg School District area... |
+
+---
+
+### About Tab
+
+About Us section content. Three rows expected.
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| section | mission, story, or service_area | mission |
+| title | Section heading | Our Mission |
+| content | Paragraph text | The Laingsburg Area Food Bank is dedicated to... |
+
+---
+
+### Services Tab
+
+Services offered. Each row is one service card.
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| order | Number for sorting | 1 |
+| title | Service name | Food Distribution |
+| description | Service description | Fresh produce, canned goods... |
+
+---
+
+### Volunteers Tab
+
+Volunteer opportunities. Each row is one opportunity.
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| order | Number for sorting | 1 |
+| title | Role name | Food Distribution |
+| description | Role description | Help sort donations, stock shelves... |
 
 ---
 
 ## Common Tasks
 
-### Adding a New Distribution Day
+### Posting a Snow Day Closure
 
-1. Open Hours & Location (CMS) or `src/_data/hours.yml`
-2. Add a new entry with day, open time, and close time
-3. Publish/commit the change
+1. Go to the `alerts` tab
+2. Add a new row:
+   - active: TRUE
+   - type: urgent
+   - title: Snow Day Closure
+   - message: Closed today due to inclement weather. Stay safe!
+   - end_date: [today's date]
+3. The alert will appear on the website within 5 minutes
+4. After the snow day, set `active` to FALSE or delete the row
 
-### Updating for Seasonal Changes
+### Updating Hours Temporarily
 
-When food availability changes seasonally:
-1. Open the Food Menu
-2. Update items in the Produce section (e.g., "Fresh fruits (winter selection)")
-3. Add or remove items as inventory changes
+For a temporary hour change:
+1. Update the `hours` tab with the new times
+2. Add an alert explaining the change
+3. Remember to change back after the temporary period
 
-### Highlighting Urgent Needs
+### Adding a Seasonal Note
 
-Move your most urgent needs to the top of the "Most Needed Items" list. The first few items get the most visibility.
+To note seasonal availability:
+1. Go to the `menu` tab
+2. Update item descriptions, e.g., "Fresh fruits (winter selection)"
+
+---
+
+## How It Works
+
+- The website checks Google Sheets every 5 minutes for updates
+- Your changes are cached, so visitors see fast page loads
+- If Google Sheets is temporarily unavailable, the website shows the last cached content
+- The website always has fallback content, so it never appears broken
 
 ---
 
 ## Troubleshooting
 
-### Changes Not Appearing
+### Changes Not Appearing?
 
-- Wait 2-3 minutes for the site to rebuild
-- Try clearing your browser cache (Ctrl+Shift+R or Cmd+Shift+R)
-- Check that you clicked "Publish" in the CMS
+1. Wait 5 minutes (content is cached)
+2. Hard refresh your browser: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+3. Check that the Sheet is still published (File > Share > Publish to web)
 
-### CMS Login Issues
+### Alert Not Showing?
 
-- Make sure you have a Netlify Identity account
-- Check your email for a confirmation link if you're a new user
-- Contact the site administrator if you can't access your account
+- Make sure `active` is exactly `TRUE` (not "yes" or "1")
+- Check the date range - current date must be between start_date and end_date
+- Verify the `type` is one of: info, warning, urgent
 
-### YAML Formatting Errors
+### Wrong Category/Priority?
 
-If you edited a file directly and the site breaks:
-- Check that all dashes line up vertically
-- Make sure you used 2 spaces for indentation (not tabs)
-- Ensure quotes are balanced (opening and closing)
-- Look for missing colons after field names
+Make sure you're using the exact category names:
+- Menu categories: `produce`, `proteins`, `grains_dairy`, `pantry`
+- Needs priorities: `most_needed`, `always_welcome`, `non_food`
+- About sections: `mission`, `story`, `service_area`
 
 ---
 
 ## Getting Help
 
 If you need assistance:
-- **Technical issues**: Contact the site administrator
 - **Content questions**: Reach out to the food bank coordinator
-- **GitHub help**: See [GitHub's editing files guide](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
+- **Technical issues**: Contact the site administrator
+- **Google Sheets help**: See [Google Sheets Help](https://support.google.com/docs/answer/6000292)

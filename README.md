@@ -1,7 +1,7 @@
 # Laingsburg Area Food Bank
 
 A modern, accessible website for the Laingsburg Area Food Bank serving the Laingsburg, Michigan community since 1985.
-
+       
 ## Features
 
 - **Accessible First**: WCAG 2.1 AA compliant with keyboard navigation, screen reader support, and proper color contrast

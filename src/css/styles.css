@@ -7,9 +7,9 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Colors - accessible contrast ratios */
-  --color-primary: #1a5f2a;        /* Forest green - food bank theme */
-  --color-primary-dark: #0d3d16;
-  --color-primary-light: #2d8a42;
+  --color-primary: #5a6b7c;        /* Blue-gray - food bank theme */
+  --color-primary-dark: #3d4d5d;
+  --color-primary-light: #8a9bab;
   --color-secondary: #f5a623;      /* Warm orange - welcoming accent */
   --color-secondary-dark: #d18c1a;
 
@@ -210,6 +210,114 @@ a:focus {
 
 .skip-link:focus {
   top: var(--spacing-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Alert Banner - Time-sensitive announcements
+   -------------------------------------------------------------------------- */
+
+.alerts-container {
+  /* Visible by default when has content, JS adds hidden attribute */
+}
+
+.alerts-container[hidden] {
+  display: none;
+}
+
+.alert-banner {
+  padding: var(--spacing-md) var(--spacing-lg);
+  padding-right: 3.5rem; /* Space for dismiss button */
+  text-align: center;
+  position: relative;
+}
+
+.alert-banner--info {
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+.alert-banner--warning {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.alert-banner--urgent {
+  background-color: var(--color-error);
+  color: var(--color-background);
+}
+
+.alert-banner__content {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs) var(--spacing-md);
+}
+
+.alert-banner__title {
+  font-weight: 700;
+  font-size: var(--font-size-base);
+}
+
+.alert-banner__message {
+  font-size: var(--font-size-base);
+}
+
+.alert-banner__link {
+  font-weight: 600;
+  text-decoration: underline;
+  color: inherit;
+}
+
+.alert-banner__link:hover,
+.alert-banner__link:focus {
+  opacity: 0.8;
+}
+
+.alert-banner__dismiss {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-md);
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: var(--spacing-xs);
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  line-height: 1;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.alert-banner__dismiss:hover,
+.alert-banner__dismiss:focus {
+  opacity: 1;
+}
+
+/* Urgent alert link visibility */
+.alert-banner--urgent .alert-banner__link {
+  color: var(--color-background);
+}
+
+/* Mobile adjustments for alerts */
+@media (max-width: 47.99rem) {
+  .alert-banner {
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-right: 3rem;
+  }
+
+  .alert-banner__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .alert-banner__dismiss {
+    right: var(--spacing-xs);
+  }
 }
 
 /* Skip link target - no outline needed, focus is for keyboard position only */
@@ -1403,6 +1511,7 @@ a:focus {
 
   /* Hide non-essential elements */
   .skip-link,
+  .alerts-container,
   .main-nav,
   .hero-cta,
   .btn,
