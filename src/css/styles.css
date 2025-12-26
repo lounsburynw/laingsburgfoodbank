@@ -628,6 +628,12 @@ a:focus {
   color: var(--color-text-light);
 }
 
+.hours-disclaimer {
+  margin-top: var(--spacing-md);
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+}
+
 /* Address */
 .info-card address {
   font-style: normal;
