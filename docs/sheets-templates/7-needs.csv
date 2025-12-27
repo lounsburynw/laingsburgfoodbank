@@ -1,0 +1,16 @@
+priority,item
+most_needed,"Canned proteins (tuna, chicken, beans)"
+most_needed,Peanut butter
+most_needed,Cereal
+most_needed,Canned vegetables and fruits
+most_needed,Pasta and pasta sauce
+always_welcome,Rice and dried beans
+always_welcome,Canned soups and stews
+always_welcome,"Boxed meals (mac & cheese, etc.)"
+always_welcome,Cooking oil
+always_welcome,Shelf-stable milk
+non_food,"Toiletries (soap, shampoo, toothpaste)"
+non_food,Paper products
+non_food,Diapers and baby wipes
+non_food,Laundry detergent
+non_food,Cleaning supplies

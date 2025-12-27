@@ -11,19 +11,29 @@
   // CONFIGURATION - Update SHEET_ID after creating your Google Sheet
   // ============================================================
 
-  // Replace with your Google Sheet ID (found in the sheet URL)
-  // URL format: https://docs.google.com/spreadsheets/d/SHEET_ID/edit
-  const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID_HERE';
+  // Published Google Sheet URL base
+  // To get this: File > Share > Publish to web > select CSV
+  const PUBLISH_ID = '2PACX-1vQTgua-yeqSCyaR0Qr6Ou-e-ww2Hoo_U68BocF-ebY-_KAQyorocML79TSlExIMP8pXpG2b8nYI9cQ2';
 
-  // Build tab URLs from sheet ID
-  const TAB_NAMES = [
-    'alerts', 'hours', 'closures', 'location', 'contact',
-    'menu', 'needs', 'faq', 'about', 'services', 'volunteers'
-  ];
+  // GID for each tab (found in URL when clicking each tab)
+  const TAB_GIDS = {
+    alerts: '1417778854',
+    hours: '591675384',
+    closures: '1632629907',
+    location: '1992149252',
+    contact: '846985790',
+    menu: '486580823',
+    needs: '592805331',
+    faq: '1487169672',
+    about: '2127259791',
+    services: '1660115934',
+    volunteers: '764227431'
+  };
 
+  // Build tab URLs from publish ID and GIDs
   const TAB_URLS = {};
-  TAB_NAMES.forEach(function(name) {
-    TAB_URLS[name] = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=' + name;
+  Object.keys(TAB_GIDS).forEach(function(name) {
+    TAB_URLS[name] = 'https://docs.google.com/spreadsheets/d/e/' + PUBLISH_ID + '/pub?output=csv&gid=' + TAB_GIDS[name];
   });
 
   // Cache settings
@@ -140,11 +150,6 @@
    * @returns {Promise<Object[]|null>} Parsed data or null on failure
    */
   async function fetchWithCache(tabName) {
-    // Check if sheet ID is configured
-    if (SHEET_ID === 'YOUR_GOOGLE_SHEET_ID_HERE') {
-      return null; // Sheet not configured yet
-    }
-
     // Try cache first
     var cached = getCachedData(tabName);
     if (cached) return cached;
