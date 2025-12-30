@@ -491,7 +491,7 @@ a:focus {
    -------------------------------------------------------------------------- */
 
 .section {
-  padding: var(--spacing-2xl) var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .section-alt {
