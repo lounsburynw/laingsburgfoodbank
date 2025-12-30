@@ -418,6 +418,19 @@ a:focus {
   background-color: var(--color-background-alt);
 }
 
+/* Donate button in navigation - stands out */
+.nav-link--donate {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border-radius: var(--border-radius-md);
+}
+
+.nav-link--donate:hover,
+.nav-link--donate:focus {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-text);
+}
+
 /* Dropdown menu */
 .nav-dropdown {
   display: none;
