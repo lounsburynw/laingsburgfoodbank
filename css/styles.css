@@ -920,6 +920,18 @@ a:focus {
    Eligibility Section (Who We Serve)
    -------------------------------------------------------------------------- */
 
+#eligibility .section-lead {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media (min-width: 48rem) {
+  #eligibility .section-lead {
+    font-size: var(--font-size-3xl);
+  }
+}
+
 .eligibility-grid {
   display: grid;
   gap: var(--spacing-lg);
