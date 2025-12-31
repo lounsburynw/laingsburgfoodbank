@@ -984,6 +984,10 @@ a:focus {
   color: var(--color-secondary);
 }
 
+.eligibility-card--no-required .area-list li::before {
+  content: "\2717";
+}
+
 @media (min-width: 48rem) {
   .eligibility-grid {
     grid-template-columns: repeat(3, 1fr);
