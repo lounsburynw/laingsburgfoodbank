@@ -27,7 +27,8 @@
     faq: '1487169672',
     about: '2127259791',
     services: '1660115934',
-    volunteers: '764227431'
+    volunteers: '764227431',
+    supporters: '2PACX-1vQTgua-yeqSCyaR0Qr6Ou-e-ww2Hoo_U68BocF-ebY-_KAQyorocML79TSlExIMP8pXpG2b8nYI9cQ2' // TODO: Update with actual GID after creating the tab in Google Sheets
   };
 
   // Build tab URLs from publish ID and GIDs
@@ -520,6 +521,35 @@
     }).join('');
   }
 
+  /**
+   * Render supporters section
+   * Expected columns: name, url, order (optional)
+   * @param {Object[]} data - Supporters data from supporters tab
+   */
+  function renderSupporters(data) {
+    var supportersList = document.querySelector('.supporters-list');
+    if (!supportersList || !data || data.length === 0) return;
+
+    // Sort by order field if present
+    var sorted = data.slice().sort(function(a, b) {
+      return (parseInt(a.order, 10) || 999) - (parseInt(b.order, 10) || 999);
+    });
+
+    supportersList.innerHTML = sorted.map(function(item) {
+      var html = '<li class="supporter-item">';
+      if (item.url) {
+        html += '<a href="' + escapeHTML(item.url) + '" target="_blank" rel="noopener noreferrer">';
+        html += escapeHTML(item.name);
+        html += ' <span class="visually-hidden">(opens in new tab)</span>';
+        html += '</a>';
+      } else {
+        html += '<span>' + escapeHTML(item.name) + '</span>';
+      }
+      html += '</li>';
+      return html;
+    }).join('');
+  }
+
   // ============================================================
   // MAIN LOADER
   // ============================================================
@@ -541,7 +571,8 @@
         fetchWithCache('faq'),
         fetchWithCache('about'),
         fetchWithCache('services'),
-        fetchWithCache('volunteers')
+        fetchWithCache('volunteers'),
+        fetchWithCache('supporters')
       ]);
 
       // Render each section if data loaded successfully
@@ -577,6 +608,9 @@
       }
       if (results[10].status === 'fulfilled' && results[10].value) {
         renderVolunteers(results[10].value);
+      }
+      if (results[11].status === 'fulfilled' && results[11].value) {
+        renderSupporters(results[11].value);
       }
 
     } catch (error) {
