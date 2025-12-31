@@ -984,8 +984,8 @@ a:focus {
   color: var(--color-secondary);
 }
 
-.eligibility-card--no-required .area-list li::before {
-  content: "\2717";
+.eligibility-card--requirements .area-list li::before {
+  content: "\2713";
 }
 
 @media (min-width: 48rem) {

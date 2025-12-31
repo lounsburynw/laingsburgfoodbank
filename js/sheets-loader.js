@@ -28,7 +28,8 @@
     about: '2127259791',
     services: '1660115934',
     volunteers: '764227431',
-    supporters: '2PACX-1vQTgua-yeqSCyaR0Qr6Ou-e-ww2Hoo_U68BocF-ebY-_KAQyorocML79TSlExIMP8pXpG2b8nYI9cQ2' // TODO: Update with actual GID after creating the tab in Google Sheets
+    supporters: '0', // TODO: Update with actual GID after creating the tab in Google Sheets
+    requirements: '0' // TODO: Update with actual GID after creating the tab in Google Sheets
   };
 
   // Build tab URLs from publish ID and GIDs
@@ -550,6 +551,36 @@
     }).join('');
   }
 
+  /**
+   * Render requirements section
+   * Expected columns: text, link_text, link_url, order (optional)
+   * @param {Object[]} data - Requirements data from requirements tab
+   */
+  function renderRequirements(data) {
+    var requirementsList = document.querySelector('.requirements-list');
+    if (!requirementsList || !data || data.length === 0) return;
+
+    // Sort by order field if present
+    var sorted = data.slice().sort(function(a, b) {
+      return (parseInt(a.order, 10) || 999) - (parseInt(b.order, 10) || 999);
+    });
+
+    requirementsList.innerHTML = sorted.map(function(item) {
+      var html = '<li>';
+      if (item.link_url && item.link_text) {
+        // Replace link_text placeholder in text with actual link
+        var linkHtml = '<a href="' + escapeHTML(item.link_url) + '" target="_blank" rel="noopener noreferrer">';
+        linkHtml += escapeHTML(item.link_text);
+        linkHtml += '<span class="visually-hidden"> (opens in new tab)</span></a>';
+        html += escapeHTML(item.text).replace(escapeHTML(item.link_text), linkHtml);
+      } else {
+        html += escapeHTML(item.text);
+      }
+      html += '</li>';
+      return html;
+    }).join('');
+  }
+
   // ============================================================
   // MAIN LOADER
   // ============================================================
@@ -572,7 +603,8 @@
         fetchWithCache('about'),
         fetchWithCache('services'),
         fetchWithCache('volunteers'),
-        fetchWithCache('supporters')
+        fetchWithCache('supporters'),
+        fetchWithCache('requirements')
       ]);
 
       // Render each section if data loaded successfully
@@ -611,6 +643,9 @@
       }
       if (results[11].status === 'fulfilled' && results[11].value) {
         renderSupporters(results[11].value);
+      }
+      if (results[12].status === 'fulfilled' && results[12].value) {
+        renderRequirements(results[12].value);
       }
 
     } catch (error) {
