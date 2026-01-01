@@ -28,7 +28,9 @@
     about: '2127259791',
     services: '1660115934',
     volunteers: '764227431',
-    supporters: '441635741'
+    supporters: '441635741',
+    eligibility: '911033262',
+    donate: '2115474870'
   };
 
   // Build tab URLs from publish ID and GIDs
@@ -407,7 +409,6 @@
     // Group items by priority
     var priorities = {
       most_needed: { title: 'Most Needed Items', className: 'needs-card needs-card--urgent', items: [] },
-      always_welcome: { title: 'Always Welcome', className: 'needs-card', items: [] },
       non_food: { title: 'Non-Food Items', className: 'needs-card', items: [] }
     };
 
@@ -550,6 +551,116 @@
     }).join('');
   }
 
+  /**
+   * Render eligibility section (Who We Serve)
+   * Expected columns: section, title, description, items, order
+   * @param {Object[]} data - Eligibility data from eligibility tab
+   */
+  function renderEligibility(data) {
+    var eligibilityGrid = document.querySelector('.eligibility-grid');
+    var sectionLead = document.querySelector('#eligibility .section-lead');
+    if (!data || data.length === 0) return;
+
+    // Create a map of sections
+    var sections = {};
+    data.forEach(function(row) {
+      sections[row.section] = row;
+    });
+
+    // Update lead text if present
+    if (sections.lead && sectionLead) {
+      sectionLead.textContent = sections.lead.description;
+    }
+
+    // Build cards for requirements and what_to_expect
+    if (!eligibilityGrid) return;
+
+    var cardOrder = ['requirements', 'what_to_expect'];
+    var cardClasses = {
+      requirements: 'eligibility-card eligibility-card--requirements',
+      what_to_expect: 'eligibility-card eligibility-card--highlight'
+    };
+
+    // Sort by order if present
+    cardOrder.sort(function(a, b) {
+      var orderA = sections[a] ? (parseInt(sections[a].order, 10) || 999) : 999;
+      var orderB = sections[b] ? (parseInt(sections[b].order, 10) || 999) : 999;
+      return orderA - orderB;
+    });
+
+    eligibilityGrid.innerHTML = cardOrder.map(function(key) {
+      var section = sections[key];
+      if (!section) return '';
+
+      var html = '<div class="' + cardClasses[key] + '">';
+      html += '<h3>' + escapeHTML(section.title) + '</h3>';
+      if (section.description) {
+        html += '<p>' + escapeHTML(section.description) + '</p>';
+      }
+      if (section.items) {
+        var items = section.items.split('|');
+        html += '<ul class="area-list">';
+        html += items.map(function(item) {
+          return '<li>' + escapeHTML(item.trim()) + '</li>';
+        }).join('');
+        html += '</ul>';
+      }
+      html += '</div>';
+      return html;
+    }).join('');
+  }
+
+  /**
+   * Render donate section (Support Our Mission)
+   * Expected columns: section, title, description, cta_text, cta_url, order
+   * @param {Object[]} data - Donate data from donate tab
+   */
+  function renderDonate(data) {
+    var donateGrid = document.querySelector('.donate-grid');
+    var sectionLead = document.querySelector('#donate .section-lead');
+    if (!data || data.length === 0) return;
+
+    // Create a map of sections
+    var sections = {};
+    data.forEach(function(row) {
+      sections[row.section] = row;
+    });
+
+    // Update lead text if present
+    if (sections.lead && sectionLead) {
+      sectionLead.textContent = sections.lead.description;
+    }
+
+    // Note: contact line is not updated here because it contains
+    // phone/email links that are dynamically updated by renderContact()
+
+    // Build cards
+    if (!donateGrid) return;
+
+    var cardSections = ['monetary', 'food', 'volunteer'];
+
+    // Sort by order if present
+    cardSections.sort(function(a, b) {
+      var orderA = sections[a] ? (parseInt(sections[a].order, 10) || 999) : 999;
+      var orderB = sections[b] ? (parseInt(sections[b].order, 10) || 999) : 999;
+      return orderA - orderB;
+    });
+
+    donateGrid.innerHTML = cardSections.map(function(key) {
+      var section = sections[key];
+      if (!section) return '';
+
+      var html = '<div class="donate-card">';
+      html += '<h3>' + escapeHTML(section.title) + '</h3>';
+      html += '<p>' + escapeHTML(section.description) + '</p>';
+      if (section.cta_text && section.cta_url) {
+        html += '<p><a href="' + escapeHTML(section.cta_url) + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">' + escapeHTML(section.cta_text) + '</a></p>';
+      }
+      html += '</div>';
+      return html;
+    }).join('');
+  }
+
   // ============================================================
   // MAIN LOADER
   // ============================================================
@@ -572,7 +683,9 @@
         fetchWithCache('about'),
         fetchWithCache('services'),
         fetchWithCache('volunteers'),
-        fetchWithCache('supporters')
+        fetchWithCache('supporters'),
+        fetchWithCache('eligibility'),
+        fetchWithCache('donate')
       ]);
 
       // Render each section if data loaded successfully
@@ -611,6 +724,12 @@
       }
       if (results[11].status === 'fulfilled' && results[11].value) {
         renderSupporters(results[11].value);
+      }
+      if (results[12].status === 'fulfilled' && results[12].value) {
+        renderEligibility(results[12].value);
+      }
+      if (results[13].status === 'fulfilled' && results[13].value) {
+        renderDonate(results[13].value);
       }
 
     } catch (error) {
