@@ -553,60 +553,35 @@
 
   /**
    * Render eligibility section (Who We Serve)
-   * Expected columns: section, title, description, items, order
+   * Expected columns: text, link_text, link_url, order
    * @param {Object[]} data - Eligibility data from eligibility tab
    */
   function renderEligibility(data) {
-    var eligibilityGrid = document.querySelector('.eligibility-grid');
-    var sectionLead = document.querySelector('#eligibility .section-lead');
-    if (!data || data.length === 0) return;
+    var requirementsList = document.querySelector('.eligibility-card--requirements .requirements-list');
+    if (!data || data.length === 0 || !requirementsList) return;
 
-    // Create a map of sections
-    var sections = {};
-    data.forEach(function(row) {
-      sections[row.section] = row;
-    });
-
-    // Update lead text if present
-    if (sections.lead && sectionLead) {
-      sectionLead.textContent = sections.lead.description;
-    }
-
-    // Build cards for requirements and what_to_expect
-    if (!eligibilityGrid) return;
-
-    var cardOrder = ['requirements', 'what_to_expect'];
-    var cardClasses = {
-      requirements: 'eligibility-card eligibility-card--requirements',
-      what_to_expect: 'eligibility-card eligibility-card--highlight'
-    };
-
-    // Sort by order if present
-    cardOrder.sort(function(a, b) {
-      var orderA = sections[a] ? (parseInt(sections[a].order, 10) || 999) : 999;
-      var orderB = sections[b] ? (parseInt(sections[b].order, 10) || 999) : 999;
+    // Sort by order
+    var sortedData = data.slice().sort(function(a, b) {
+      var orderA = parseInt(a.order, 10) || 999;
+      var orderB = parseInt(b.order, 10) || 999;
       return orderA - orderB;
     });
 
-    eligibilityGrid.innerHTML = cardOrder.map(function(key) {
-      var section = sections[key];
-      if (!section) return '';
+    // Build list items
+    requirementsList.innerHTML = sortedData.map(function(row) {
+      if (!row.text) return '';
 
-      var html = '<div class="' + cardClasses[key] + '">';
-      html += '<h3>' + escapeHTML(section.title) + '</h3>';
-      if (section.description) {
-        html += '<p>' + escapeHTML(section.description) + '</p>';
+      var text = escapeHTML(row.text);
+
+      // If there's a link, replace the link_text portion with a hyperlink
+      if (row.link_text && row.link_url) {
+        var linkText = escapeHTML(row.link_text);
+        var link = '<a href="' + escapeHTML(row.link_url.trim()) + '" target="_blank" rel="noopener noreferrer">' +
+                   linkText + '<span class="visually-hidden"> (opens in new tab)</span></a>';
+        text = text.replace(linkText, link);
       }
-      if (section.items) {
-        var items = section.items.split('|');
-        html += '<ul class="area-list">';
-        html += items.map(function(item) {
-          return '<li>' + escapeHTML(item.trim()) + '</li>';
-        }).join('');
-        html += '</ul>';
-      }
-      html += '</div>';
-      return html;
+
+      return '<li>' + text + '</li>';
     }).join('');
   }
 
