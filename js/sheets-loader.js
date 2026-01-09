@@ -87,14 +87,14 @@
     var lines = text.trim().split('\n');
     if (lines.length < 2) return [];
 
-    var headers = parseCSVLine(lines[0]);
+    var headers = parseCSVLine(lines[0]).map(function(h) { return h.trim(); });
     var data = [];
 
     for (var i = 1; i < lines.length; i++) {
       var values = parseCSVLine(lines[i]);
       var obj = {};
       for (var j = 0; j < headers.length; j++) {
-        obj[headers[j]] = values[j] || '';
+        obj[headers[j]] = (values[j] || '').trim();
       }
       data.push(obj);
     }
